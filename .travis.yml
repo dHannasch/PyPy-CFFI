@@ -7,21 +7,21 @@ before_install:
   - uname -a
   - lsb_release -a
 install:
-  - pip install virtualenv
-  - virtualenv --version
-  - tox --version
+  - echo 1
 script:
   # - pip install .
   # - tox works fine even without skipinstall. It creates the environment and installs the package into it.
   # - rm -r .tox
   # - tox --recreate -vv --sitepackages
+  - python -m venv --system-site-packages venv-with-site-packages
+  - ls venv-with-site-packages/bin
+  - pip install virtualenv
+  - virtualenv --version
   - virtualenv env-without-site-packages
   - env-without-site-packages/bin/python -c "import setuptools; print(setuptools.__version__)"
   - env-without-site-packages/bin/python -c "import setuptools; import setuptools.build_meta"
   - env-without-site-packages/bin/pip install virtualenv
   - env-without-site-packages/bin/pip install .
-  - python -m venv --system-site-packages venv-with-site-packages
-  - ls venv-with-site-packages/bin
   - virtualenv --system-site-packages env-with-site-packages
   - env-with-site-packages/bin/python -c "import setuptools; print(setuptools.__version__)"
   - env-with-site-packages/bin/python -c "import setuptools; import setuptools.build_meta"
