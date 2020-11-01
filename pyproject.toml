@@ -4,3 +4,4 @@ requires = [
     "wheel",
     "minimal",
 ]
+build-backend = "setuptools.build_meta"
