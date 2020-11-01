@@ -17,9 +17,11 @@ script:
   # - tox --recreate -vv --sitepackages
   - virtualenv env-without-site-packages
   - env-without-site-packages/bin/python -c "import setuptools; print(setuptools.__version__)"
+  - env-without-site-packages/bin/python -c "import setuptools; import setuptools.build_meta"
   - env-without-site-packages/bin/pip install .
   - virtualenv --system-site-packages env-with-site-packages
   - env-with-site-packages/bin/python -c "import setuptools; print(setuptools.__version__)"
+  - env-with-site-packages/bin/python -c "import setuptools; import setuptools.build_meta"
   - env-with-site-packages/bin/pip install . --no-build-isolation
   - env-with-site-packages/bin/pip install .
 
