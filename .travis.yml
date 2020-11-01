@@ -1,5 +1,5 @@
 language: python
-python: 3.8
+python: pypy3
 before_install:
   - python --version
   - virtualenv --version
@@ -11,5 +11,4 @@ install:
   - virtualenv --version
   - tox --version
 script:
-  - git --version
   - tox --sitepackages
