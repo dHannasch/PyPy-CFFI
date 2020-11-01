@@ -11,8 +11,12 @@ install:
   - virtualenv --version
   - tox --version
 script:
-  - pip install .
+  # - pip install .
   # - tox works fine even without skipinstall. It creates the environment and installs the package into it.
   # - rm -r .tox
-  - tox --recreate -vv --sitepackages
-  - .tox/pypy3/bin/pip install .
+  # - tox --recreate -vv --sitepackages
+  - venv env-without-site-packages
+  - env-without-site-packages/bin/pip install .
+  - venv --system-site-packages env-with-site-packages
+  - env-with-site-packages/bin/pip install .
+
