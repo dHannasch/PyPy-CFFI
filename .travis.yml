@@ -7,6 +7,8 @@ before_install:
   - uname -a
   - lsb_release -a
 script:
+  - python -c "import setuptools; print(setuptools.__version__)"
+  - python -c "import setuptools; import setuptools.build_meta"
   - python -m venv --system-site-packages venv-with-site-packages
   - ls venv-with-site-packages/bin
   - venv-with-site-packages/bin/python -m pip install .
