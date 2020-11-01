@@ -1,0 +1,15 @@
+language: python
+python: 3.8
+before_install:
+  - python --version
+  - virtualenv --version
+  - pip --version
+  - uname -a
+  - lsb_release -a
+install:
+  - pip install -U wheel setuptools tox cookiecutter bumpversion
+  - virtualenv --version
+  - tox --version
+script:
+  - git --version
+  - tox --sitepackages
