@@ -15,8 +15,8 @@ script:
   # - tox works fine even without skipinstall. It creates the environment and installs the package into it.
   # - rm -r .tox
   # - tox --recreate -vv --sitepackages
-  - python -m venv env-without-site-packages
+  - virtualenv env-without-site-packages
   - env-without-site-packages/bin/pip install .
-  - python -m venv --system-site-packages env-with-site-packages
+  - virtualenv --system-site-packages env-with-site-packages
   - env-with-site-packages/bin/pip install .
 
