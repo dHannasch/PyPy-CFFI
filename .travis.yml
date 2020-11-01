@@ -15,3 +15,4 @@ script:
   - tox
   - rm -r .tox
   - tox --recreate -vv --sitepackages
+  - .tox/pypy3/bin/pip install .
