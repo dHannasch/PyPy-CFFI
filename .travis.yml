@@ -24,5 +24,6 @@ script:
   - virtualenv --system-site-packages env-with-site-packages
   - env-with-site-packages/bin/python -c "import setuptools; print(setuptools.__version__)"
   - env-with-site-packages/bin/python -c "import setuptools; import setuptools.build_meta"
-  - env-with-site-packages/bin/pip install . || env-with-site-packages/bin/pip install . --no-build-isolation
+  - env-with-site-packages/bin/pip install . --no-build-isolation
+  - env-with-site-packages/bin/pip install .
 
