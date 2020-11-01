@@ -18,5 +18,6 @@ script:
   - virtualenv env-without-site-packages
   - env-without-site-packages/bin/pip install .
   - virtualenv --system-site-packages env-with-site-packages
+  - env-with-site-packages/bin/pip install . --no-build-isolation
   - env-with-site-packages/bin/pip install .
 
