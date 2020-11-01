@@ -12,4 +12,6 @@ install:
   - tox --version
 script:
   - pip install .
+  - tox
+  - rm -r .tox
   - tox --sitepackages
