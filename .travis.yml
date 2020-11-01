@@ -15,6 +15,7 @@ script:
   # - tox --recreate -vv --sitepackages
   - python -m venv --system-site-packages venv-with-site-packages
   - ls venv-with-site-packages/bin
+  - venv-with-site-packages/bin/python -m pip install .
   - virtualenv env-without-site-packages
   - env-without-site-packages/bin/python -c "import setuptools; print(setuptools.__version__)"
   - env-without-site-packages/bin/python -c "import setuptools; import setuptools.build_meta"
