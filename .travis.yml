@@ -6,13 +6,7 @@ before_install:
   - pip --version
   - uname -a
   - lsb_release -a
-install:
-  - echo 1
 script:
-  # - pip install .
-  # - tox works fine even without skipinstall. It creates the environment and installs the package into it.
-  # - rm -r .tox
-  # - tox --recreate -vv --sitepackages
   - python -m venv --system-site-packages venv-with-site-packages
   - ls venv-with-site-packages/bin
   - venv-with-site-packages/bin/python -m pip install .
