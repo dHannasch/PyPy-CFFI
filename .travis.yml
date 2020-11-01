@@ -11,4 +11,5 @@ install:
   - virtualenv --version
   - tox --version
 script:
+  - pip install .
   - tox --sitepackages
